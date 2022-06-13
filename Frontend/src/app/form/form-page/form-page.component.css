@@ -1,0 +1,22 @@
+.form-header {
+  margin: 0 auto 30px;
+}
+
+.form-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #1976d2;
+}
+
+.form-subtitle {
+  margin-top: 26px;
+}
+
+.separator-line {
+  display: inline-block;
+  text-align: left;
+  padding-bottom: 30px;
+  border-bottom: 2px solid hsla(0,0%,72.2%,.61);
+  width: 100%;
+}
