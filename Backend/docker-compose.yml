@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  mysql_covid:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_USER: covidUser
+      MYSQL_PASSWORD: password1
+      MYSQL_ROOT_PASSWORD: rootpassword1
+      MYSQL_DATABASE: covidDeclaration
+    ports:
+      - "3306:3306"
