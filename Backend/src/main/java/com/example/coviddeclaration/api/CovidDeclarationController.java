@@ -22,12 +22,12 @@ public class CovidDeclarationController {
 	@Autowired
 	private CovidDeclarationRepository covidDeclarationRepo;
 		
-	@GetMapping("/covidDeclarations")
+	@GetMapping("/covid-declarations")
 	public @ResponseBody Iterable<Declaration> getAllCovidDeclaration() {
 		return covidDeclarationRepo.findAll();
 	}
 	
-	@PostMapping("/covidDeclaration")
+	@PostMapping("/create-covid-declaration")
 	public ResponseEntity<Declaration> createCovidDeclaration(@RequestBody Declaration newDeclaration) {
     try {
       Declaration createdDeclarated = covidDeclarationRepo.save(newDeclaration);
