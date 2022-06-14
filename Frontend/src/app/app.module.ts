@@ -16,12 +16,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPageComponent } from './form/form-page/form-page.component';
 import { ViewRecordsPageComponent } from './admin/view-records-page/view-records-page.component';
+import { SuccessPageComponent } from './form/success-page/success-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormPageComponent,
-    ViewRecordsPageComponent
+    ViewRecordsPageComponent,
+    SuccessPageComponent
   ],
   imports: [
     BrowserModule,

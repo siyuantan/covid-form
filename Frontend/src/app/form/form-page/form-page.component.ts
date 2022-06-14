@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ResourcesService } from 'src/app/services/resources.service';
 import { CovidDeclaration } from 'src/types/covid-declaration';
@@ -34,7 +35,7 @@ export class FormPageComponent implements OnInit {
   savedHasSymptoms! : boolean;
   savedHasCloseContact!: boolean;
 
-  constructor(private resourceService: ResourcesService) { }
+  constructor(private resourceService: ResourcesService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -51,6 +52,7 @@ export class FormPageComponent implements OnInit {
     this.resourceService.saveCovidDeclaration(newlyCreatedDeclaration).subscribe({
       next: (data: ReturnedRecord) => {
         console.log('Record saved.');
+        this.router.navigate(['done']);
       },
       error: (error: any) => {
         console.error('Error on creating CovidDeclaration: ', error);
