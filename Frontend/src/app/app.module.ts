@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,12 +16,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPageComponent } from './form/form-page/form-page.component';
 import { QuestionEntryComponent } from './form/question-entry/question-entry.component';
+import { AdminPageComponent } from './admin/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormPageComponent,
-    QuestionEntryComponent
+    QuestionEntryComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { QuestionEntryComponent } from './form/question-entry/question-entry.com
     MatInputModule,
     MatIconModule,
     MatButtonToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
