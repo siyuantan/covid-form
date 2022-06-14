@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Declaration {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
   private Instant date_submitted;
   private String name;
