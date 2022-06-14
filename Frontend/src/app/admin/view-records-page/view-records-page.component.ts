@@ -3,13 +3,16 @@ import { ResourcesService } from 'src/app/services/resources.service';
 import { CovidDeclaration } from 'src/types/covid-declaration';
 
 @Component({
-  selector: 'app-admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.css']
+  selector: 'view-records-page',
+  templateUrl: './view-records-page.component.html',
+  styleUrls: ['./view-records-page.component.css']
 })
-export class AdminPageComponent implements OnInit {
+export class ViewRecordsPageComponent implements OnInit {
   retrievedCovidDeclarations: CovidDeclaration[] = [];
   displayedColumns: string[] = ['id', 'dateSubmitted' ,'name', 'temperature', 'hasSymptoms', 'isCloseContact'];
+  // https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+  // Localised Date | Localised 24hr Time
+  dateTimeDisplayFormat = 'D T';
 
   constructor(private resourcesService: ResourcesService) { }
 

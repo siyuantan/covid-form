@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { CovidDeclaration } from 'src/types/covid-declaration';
 
 @Injectable({
@@ -9,8 +9,9 @@ import { CovidDeclaration } from 'src/types/covid-declaration';
 export class ResourcesService {
 
   constructor(private http: HttpClient) {}
-
+  
   getAllCovidDeclarations(): Observable<CovidDeclaration[]> {
-    return this.http.get<CovidDeclaration[]>('http://localhost:8080/api/covidDeclarations');
+    return this.http.get<CovidDeclaration[]>('http://localhost:8080/api/covidDeclarations')
+    .pipe(map(covidDeclarations => covidDeclarations.map(declaration => CovidDeclaration.toBusinessEntity(declaration))));
   }
 }

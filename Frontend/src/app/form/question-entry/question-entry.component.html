@@ -14,7 +14,7 @@
       <ng-container *ngSwitchCase="1">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>{{question.text}}</mat-label>
-          <input matInput placeholder="Name" value="">
+          <input matInput [placeholder]="question.text" value="">
         </mat-form-field>
       </ng-container>
     </form>

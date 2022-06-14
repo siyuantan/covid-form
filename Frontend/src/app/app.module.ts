@@ -16,14 +16,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPageComponent } from './form/form-page/form-page.component';
 import { QuestionEntryComponent } from './form/question-entry/question-entry.component';
-import { AdminPageComponent } from './admin/admin-page/admin-page.component';
+import { ViewRecordsPageComponent } from './admin/view-records-page/view-records-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormPageComponent,
     QuestionEntryComponent,
-    AdminPageComponent
+    ViewRecordsPageComponent
   ],
   imports: [
     BrowserModule,
