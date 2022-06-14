@@ -3,3 +3,10 @@
   <p class="form-subtitle">Given the ongoing COVID-19 pandemic, the Singapore High Commission seeks your co-operation to complete the following form to facilitate contact tracing, if necessary.</p>
   <div class="separator-line"></div>
 </div>
+
+<ng-container *ngFor="let question of questions">
+  <app-question-entry [question]="question"></app-question-entry>
+</ng-container>
+<div class="button-container">
+  <button mat-raised-button class="full-width" color="primary">Submit</button>
+</div>

@@ -1,4 +1,4 @@
-.form-header {
+#form-header {
   margin: 0 auto 30px;
 }
 
@@ -6,7 +6,7 @@
   margin-bottom: 4px;
   font-weight: 700;
   font-size: 24px;
-  color: #1976d2;
+  color: #673ab7;
 }
 
 .form-subtitle {
@@ -19,4 +19,8 @@
   padding-bottom: 30px;
   border-bottom: 2px solid hsla(0,0%,72.2%,.61);
   width: 100%;
+}
+
+.button-container {
+  margin-top: 80px;
 }
