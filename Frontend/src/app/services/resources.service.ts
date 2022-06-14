@@ -11,7 +11,7 @@ export class ResourcesService {
   constructor(private http: HttpClient) {}
   
   getAllCovidDeclarations(): Observable<CovidDeclaration[]> {
-    return this.http.get<CovidDeclaration[]>('http://localhost:8080/api/covidDeclarations')
+    return this.http.get<CovidDeclaration[]>('http://localhost:8080/api/covid-declarations')
     .pipe(map(covidDeclarations => covidDeclarations.map(declaration => CovidDeclaration.toBusinessEntity(declaration))));
   }
 }
