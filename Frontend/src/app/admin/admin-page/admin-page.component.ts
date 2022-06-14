@@ -19,4 +19,8 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+  translateBooleanToYesNoString(booleanToBeConverted: boolean) {
+    return booleanToBeConverted ? 'Yes' : 'No';
+  }
+
 }

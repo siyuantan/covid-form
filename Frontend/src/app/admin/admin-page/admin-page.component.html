@@ -23,12 +23,12 @@
 
     <ng-container matColumnDef="hasSymptoms">
       <th mat-header-cell *matHeaderCellDef> Has Symptoms? </th>
-      <td mat-cell *matCellDef="let row"> {{row.hasSymptoms}} </td>
+      <td mat-cell *matCellDef="let row"> {{translateBooleanToYesNoString(row.has_symptoms)}} </td>
     </ng-container>
     
     <ng-container matColumnDef="isCloseContact">
-      <th mat-header-cell *matHeaderCellDef> Is Close Contact? </th>
-      <td mat-cell *matCellDef="let row"> {{row.isCloseContact}} </td>
+      <th mat-header-cell *matHeaderCellDef> Has Close Contact? </th>
+      <td mat-cell *matCellDef="let row"> {{translateBooleanToYesNoString(row.has_close_contact)}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
