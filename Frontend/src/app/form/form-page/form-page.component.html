@@ -3,10 +3,63 @@
   <p class="form-subtitle">Given the ongoing COVID-19 pandemic, the Singapore High Commission seeks your co-operation to complete the following form to facilitate contact tracing, if necessary.</p>
   <div class="separator-line"></div>
 </div>
+<div class="question-response">
+  <form class="form">
+    <!-- name -->
+    <div id="question-name">
+      <div class="question-container">
+        <span class="label-text question-number">{{questions[0].index}}.</span>
+        <span class="label-text question-text">{{questions[0].text}}</span>
+      </div>
+      <div class="response-container">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>{{questions[0].text}}</mat-label>
+          <input matInput [placeholder]="questions[0].text" name="name" [(ngModel)]="savedName">
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- temperature -->
+    <div id="question-temperature">
+      <div class="question-container">
+        <span class="label-text question-number">{{questions[1].index}}.</span>
+        <span class="label-text question-text">{{questions[1].text}}</span>
+      </div>
+      <div class="response-container">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>{{questions[1].text}}</mat-label>
+          <input matInput [placeholder]="questions[1].text" name="temperature" [(ngModel)]="savedTemperature">
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- temperature -->
+    <div id="question-symptoms">
+      <div class="question-container">
+        <span class="label-text question-number">{{questions[2].index}}.</span>
+        <span class="label-text question-text">{{questions[2].text}}</span>
+      </div>
+      <div class="response-container">
+        <mat-button-toggle-group style="width: 100%;" name="no-yes" aria-label="No Or Yes" [(ngModel)]="savedHasSymptoms">
+          <mat-button-toggle class="full-width" [value]="false"><mat-icon class="no-icon">close</mat-icon>No</mat-button-toggle>
+          <mat-button-toggle class="full-width" [value]="true"><mat-icon class="yes-icon">done</mat-icon>Yes</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <!-- close contact -->
+    <div id="question-close-contact">
+      <div class="question-container">
+        <span class="label-text question-number">{{questions[3].index}}.</span>
+        <span class="label-text question-text">{{questions[3].text}}</span>
+      </div>
+      <div class="response-container">
+        <mat-button-toggle-group style="width: 100%;" name="no-yes" aria-label="No Or Yes" [(ngModel)]="savedHasCloseContact">
+          <mat-button-toggle class="full-width" [value]="false"><mat-icon class="no-icon">close</mat-icon>No</mat-button-toggle>
+          <mat-button-toggle class="full-width" [value]="true"><mat-icon class="yes-icon">done</mat-icon>Yes</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+  </form>
+</div>
 
-<ng-container *ngFor="let question of questions">
-  <app-question-entry [question]="question"></app-question-entry>
-</ng-container>
 <div class="button-container">
-  <button mat-raised-button class="full-width" color="primary">Submit</button>
+  <button mat-raised-button class="full-width" color="primary" (click)="submitForm()">Submit</button>
 </div>

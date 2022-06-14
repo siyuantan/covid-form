@@ -14,4 +14,8 @@ export class ResourcesService {
     return this.http.get<CovidDeclaration[]>('http://localhost:8080/api/covid-declarations')
     .pipe(map(covidDeclarations => covidDeclarations.map(declaration => CovidDeclaration.toBusinessEntity(declaration))));
   }
+
+  saveCovidDeclaration(createCovidDeclaration: CovidDeclaration): Observable<any> {
+    return this.http.post<any>('http://localhost:8080/api/create-covid-declaration', createCovidDeclaration);
+  }
 }

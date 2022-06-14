@@ -24,3 +24,33 @@
 .button-container {
   margin-top: 80px;
 }
+
+.label-text {
+  font-size: 18px;
+}
+
+.question-container {
+  margin-bottom: 15px;
+}
+
+.question-number {
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.response-container {
+  margin-bottom: 24px;
+}
+
+.no-icon {
+  color: #ff5b58;
+}
+
+.yes-icon {
+  color: #1DA71D;
+}
+
+.mat-button-toggle-checked {
+  background: #673ab7;
+  color: white;
+}
