@@ -2,7 +2,6 @@ package com.example.coviddeclaration.entity;
 
 import java.time.Instant;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,24 +21,28 @@ public class Declaration {
   private boolean has_symptoms;
   private boolean has_close_contact;
   
+  public int getid() {
+    return id;
+  }
+
   public Instant getDate_submitted() {
     return date_submitted;
   }
 
+  public String getName() {
+    return name;
+  }
+  
+  public float getTemperature() {
+    return temperature;
+  }
+  
   public boolean isHas_close_contact() {
     return has_close_contact;
   }
 
   public boolean isHas_symptoms() {
     return has_symptoms;
-  }
-
-  public float getTemperature() {
-    return temperature;
-  }
-
-  public String getName() {
-    return name;
   }
 
 }
