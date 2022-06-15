@@ -1,18 +1,11 @@
+import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ResourcesService } from 'src/app/services/resources.service';
-import { CovidDeclaration } from 'src/types/covid-declaration';
+import { DeclarationRecordJson } from 'src/types/covid-declaration';
 import { Question } from 'src/types/question';
 
-interface ReturnedRecord {
-  id: number;
-  date_submitted: string;
-  name: string;
-  temperature: number;
-  has_symptoms: boolean;
-  has_close_contact: boolean;
-}
 
 @Component({
   selector: 'app-form-page',
@@ -42,15 +35,17 @@ export class FormPageComponent implements OnInit {
   }
 
   submitForm() {
-    const newlyCreatedDeclaration = new CovidDeclaration(
-      0, 
-      DateTime.now().toISO(), 
-      this.savedName,
-      this.savedTemperature,
-      this.savedHasSymptoms,
-      this.savedHasCloseContact)
+    const newlyCreatedDeclaration: DeclarationRecordJson = {
+      id: 0, 
+      date_submitted: DateTime.now().toJSDate().toISOString(), 
+      name: this.savedName,
+      temperature: this.savedTemperature,
+      has_symptoms: this.savedHasSymptoms,
+      has_close_contact: this.savedHasCloseContact
+    }
+    
     this.resourceService.saveCovidDeclaration(newlyCreatedDeclaration).subscribe({
-      next: (data: ReturnedRecord) => {
+      next: (data: DeclarationRecordJson) => {
         console.log('Record saved.');
         this.router.navigate(['done']);
       },
