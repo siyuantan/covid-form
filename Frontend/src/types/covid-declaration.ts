@@ -29,3 +29,12 @@ export class CovidDeclaration {
 
   }
 }
+
+export interface DeclarationRecordJson {
+  id: number;
+  date_submitted: string;
+  name: string;
+  temperature: number;
+  has_symptoms: boolean;
+  has_close_contact: boolean;
+}
